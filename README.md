@@ -1,0 +1,1 @@
+use npm i to install node modules on client and server
