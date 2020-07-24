@@ -1,0 +1,155 @@
+import axios from "axios";
+import {
+  LOAD_PROFILE_DATA,
+  SET_LOADER,
+  REMOVE_LOADER,
+  GET_ALL_MUSIC,
+} from "../types";
+import { notify, notifyError } from "../toastNotification";
+
+//Loading User Data
+export const userData = () => async (dispatch) => {
+  dispatch({
+    type: SET_LOADER,
+  });
+  try {
+    await axios.get("/api/profile").then((res) => {
+      if (res) {
+        dispatch({
+          type: REMOVE_LOADER,
+        });
+        dispatch({
+          type: LOAD_PROFILE_DATA,
+          payload: res.data,
+        });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: REMOVE_LOADER,
+    });
+    const mesaage = "error";
+    notifyError(mesaage);
+  }
+};
+
+//Sending User Data For First Time
+export const postUserData = (data, history) => async (dispatch) => {
+  dispatch({
+    type: SET_LOADER,
+  });
+  try {
+    await axios.post("/api/profile", data).then((res) => {
+      // console.log(res);
+      if (res) {
+        dispatch({
+          type: REMOVE_LOADER,
+        });
+
+        const mesaage = "Sucess";
+        notify(mesaage);
+        history.push({
+          pathname: "/profile",
+        });
+      }
+    });
+  } catch (error) {
+    dispatch({
+      type: REMOVE_LOADER,
+    });
+    const mesaage = error.response.data;
+    notifyError(mesaage);
+  }
+};
+
+//Adding to music List
+
+export const addMusic = (data) => async (dispatch) => {
+  dispatch({
+    type: SET_LOADER,
+  });
+  try {
+    await axios.post("/api/music", data).then((res) => {
+      if (res) {
+        dispatch({
+          type: REMOVE_LOADER,
+        });
+        window.location.reload();
+        dispatch(showAllMusic());
+        setTimeout(() => {
+          const mesaage = "Sucess";
+          notify(mesaage);
+        }, 3000);
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: REMOVE_LOADER,
+    });
+  }
+};
+
+//Shows List of all music
+
+export const showAllMusic = (data) => async (dispatch) => {
+  try {
+    await axios.get("/api/music", data).then((res) => {
+      // console.log(res);
+      if (res) {
+        dispatch({
+          type: GET_ALL_MUSIC,
+          payload: res.data,
+        });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Edit music data
+
+export const editSong = (data) => async (dispatch) => {
+  dispatch({
+    type: SET_LOADER,
+  });
+  try {
+    await axios.patch("/api/music", data).then((res) => {
+      // console.log(res, "edit music response");
+      if (res) {
+        dispatch({
+          type: REMOVE_LOADER,
+        });
+
+        window.location.reload();
+      }
+    });
+  } catch (error) {
+    console.log(error, "edit song error");
+    dispatch({
+      type: REMOVE_LOADER,
+    });
+  }
+};
+
+//Delete music
+
+export const deleteSong = (id) => async (dispatch) => {
+  if (window.confirm("Are you sure, it can't be undone")) {
+    try {
+      dispatch({ type: SET_LOADER });
+      await axios.delete(`/api/music/${id}`).then((res) => {
+        if (res) {
+          dispatch({
+            type: REMOVE_LOADER,
+          });
+          window.location.reload();
+        }
+      });
+    } catch (error) {
+      console.log("errrrrr");
+    }
+  }
+};

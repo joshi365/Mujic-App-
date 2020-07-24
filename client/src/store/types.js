@@ -1,0 +1,9 @@
+export const GET_ERRORS = "GET_ERRORS";
+export const SET_LOADER = "SET_LOADER";
+export const REMOVE_LOADER = "REMOVE_LOADER";
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
+export const LOAD_PROFILE_DATA = "LOAD_PROFILE_DATA";
+export const SHOW_SUBMIT = "SHOW_SUBMIT";
+export const REGISTRATION_FORM = "REGISTRATION_FORM";
+export const SHOW_SUBMIT_FALSE = "SHOW_SUBMIT_FALSE";
+export const GET_ALL_MUSIC = "GET_ALL_MUSIC";

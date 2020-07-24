@@ -1,0 +1,71 @@
+.profile_page_all {
+  background: url(./Assets/images/giutar.jpeg);
+  background-size: cover; /* <------ */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.profile_main_page {
+  text-align: center;
+
+  .image_add {
+    width: 3%;
+    cursor: pointer;
+  }
+}
+
+.music_main_div {
+  text-align: center;
+  border: vw(4px) solid #23d954;
+  border-radius: vw(120px);
+  .delete_img {
+    width: 4%;
+    cursor: pointer;
+  }
+
+  .edit_img {
+    width: 4%;
+    cursor: pointer;
+  }
+}
+
+.modal-content {
+  border-radius: vw(60px);
+  border: 2px solid #23d954;
+  -webkit-box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+  -moz-box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+  box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+}
+
+.accordion {
+  padding: 0px !important;
+
+  .card {
+    border: none;
+    background-color: transparent;
+  }
+  .card-header {
+    background-color: #e94b3cff;
+    margin: auto;
+  }
+}
+
+//NAVBAR
+
+@media (max-width: 800px) {
+  .profile_main_page {
+    .image_add {
+      width: 7%;
+    }
+  }
+
+  .music_main_div {
+    .delete_img {
+      width: 8%;
+    }
+    .edit_img {
+      width: 7%;
+    }
+  }
+}
