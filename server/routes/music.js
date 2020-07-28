@@ -49,15 +49,16 @@ router.patch("/", async (req, res) => {
   });
 
   Music.findOne({ _id: req.body.id }).then((awsome) => {
-    if (awsome) {
-      Music.findOneAndUpdate(
-        { _id: req.body.id },
-        { $set: music },
-        { new: true }
-      ).then((profile) => res.json(profile));
-    } else {
-      "/", async(req, res);
-      console.log("or mehnat kar laude");
+    try {
+      if (awsome) {
+        Music.findOneAndUpdate(
+          { _id: req.body.id },
+          { $set: music },
+          { new: true }
+        ).then((profile) => res.json(profile));
+      }
+    } catch (error) {
+      res.status(400).send(error);
     }
   });
 });
@@ -67,7 +68,13 @@ router.patch("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   // console.log(req.params.id);
 
-  Music.deleteOne({ _id: req.params.id }).then((data) => res.send(data));
+  try {
+    Music.deleteOne({ _id: req.params.id }).then((data) =>
+      res.status(200).send(data)
+    );
+  } catch (error) {
+    res.status(400).send(error);
+  }
 });
 
 module.exports = router;

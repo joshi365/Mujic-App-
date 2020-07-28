@@ -149,6 +149,11 @@ export const signUp = (data, history) => async (dispatch) => {
         const type = "error";
         notify(mesaage, type);
         localStorage.clear();
+
+        dispatch({
+          type: SHOW_SUBMIT_FALSE,
+        });
+
         setTimeout(() => {
           history.push({
             pathname: "/",
@@ -213,7 +218,7 @@ export const signIn = (data, history) => async (dispatch) => {
     });
   } catch (error) {
     if (error) {
-      const mesaage = error.response.data;
+      const mesaage = error.res.data;
       notifyError(mesaage);
       dispatch({
         type: REMOVE_LOADER,
@@ -239,8 +244,7 @@ export const set_current_user = (decoded) => async (dispatch) => {
  ******************************/
 
 export const logoutUser = () => async (dispatch) => {
-  localStorage.clear();
-
+  await localStorage.clear();
   setTimeout(() => {
     window.location.href = "/";
     dispatch(set_current_user({}));
@@ -248,5 +252,5 @@ export const logoutUser = () => async (dispatch) => {
       type: SHOW_SUBMIT_FALSE,
     });
     window.location.reload();
-  }, 1000);
+  }, 300);
 };

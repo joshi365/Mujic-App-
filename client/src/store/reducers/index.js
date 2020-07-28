@@ -10,7 +10,7 @@ import music from "./music";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["loader", "authReducer"],
+  whitelist: ["loader"],
 };
 
 const rootReducer = combineReducers({

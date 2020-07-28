@@ -1,10 +1,12 @@
 import React from "react";
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
-function MusicList({ data, editModal, deleteMusic }) {
+function MusicList({ data, editModal, deleteMusic, index }) {
   return (
     <React.Fragment>
+      {console.log(index)}
       <div className="container ">
         <div className="p-2 music_main_div mt-3">
           <div className="row">
@@ -30,10 +32,12 @@ function MusicList({ data, editModal, deleteMusic }) {
           <div className="col-12 mt-2 p-0">
             <Accordion>
               <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                  <div className="col-12 normal-text">More Info</div>
+                <Accordion.Toggle as={Button} variant="link" eventKey={index}>
+                  <p style={{ color: "#fa2f20 " }} className="normal-text">
+                    More Info
+                  </p>
                 </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
+                <Accordion.Collapse eventKey={index}>
                   <Card.Body>
                     <div className="row">
                       <div className="col-4 p-0 normal-text">

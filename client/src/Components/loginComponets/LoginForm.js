@@ -14,35 +14,29 @@ function LoginForm({ inputHandler, onSubmitHandler, mobile, password }) {
             </h4>
             {/* HEADER PART */}
 
-            <div className="form-group row">
-              <div className="col-sm-4"></div>
-              <div className="col-sm-4">
-                <input
-                  type="text"
-                  className="input-login mb-3"
-                  placeholder="Mobile Number"
-                  autoCorrect="false"
-                  name="number"
-                  onChange={inputHandler}
-                  value={mobile}
-                />
-              </div>
-              <div className="col-sm-4"></div>
+            <div className="col-12">
+              <input
+                type="text"
+                className="input-login mb-4 col-12"
+                placeholder="Mobile Number"
+                autoCorrect="false"
+                name="number"
+                onChange={inputHandler}
+                value={mobile}
+              />
             </div>
-            <div className="form-group row">
-              <div className="col-sm-4"></div>
-              <div className="col-sm-4">
-                <input
-                  type="password"
-                  className="input-login"
-                  placeholder="Password"
-                  name="password"
-                  onChange={inputHandler}
-                  value={password}
-                />
-              </div>
-              <div className="col-sm-4"></div>
+
+            <div className="col-12">
+              <input
+                type="password"
+                className="input-login "
+                placeholder="Password"
+                name="password"
+                onChange={inputHandler}
+                value={password}
+              />
             </div>
+
             <button type="submit" className="login-button mt-4 mb-2">
               Login
             </button>

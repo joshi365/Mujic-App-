@@ -8,7 +8,7 @@ import {
 import { notify, notifyError } from "../toastNotification";
 
 //Loading User Data
-export const userData = () => async (dispatch) => {
+export const userData = (history) => async (dispatch) => {
   dispatch({
     type: SET_LOADER,
   });
@@ -26,9 +26,11 @@ export const userData = () => async (dispatch) => {
     });
   } catch (error) {
     console.log(error);
+
     dispatch({
       type: REMOVE_LOADER,
     });
+
     const mesaage = "error";
     notifyError(mesaage);
   }
@@ -65,7 +67,7 @@ export const postUserData = (data, history) => async (dispatch) => {
 
 //Adding to music List
 
-export const addMusic = (data) => async (dispatch) => {
+export const addMusic = (data, history) => async (dispatch) => {
   dispatch({
     type: SET_LOADER,
   });
@@ -93,9 +95,9 @@ export const addMusic = (data) => async (dispatch) => {
 
 //Shows List of all music
 
-export const showAllMusic = (data) => async (dispatch) => {
+export const showAllMusic = (history) => async (dispatch) => {
   try {
-    await axios.get("/api/music", data).then((res) => {
+    await axios.get("/api/music").then((res) => {
       // console.log(res);
       if (res) {
         dispatch({
@@ -106,12 +108,15 @@ export const showAllMusic = (data) => async (dispatch) => {
     });
   } catch (error) {
     console.log(error);
+    history.push({
+      pathname: "/error",
+    });
   }
 };
 
 //Edit music data
 
-export const editSong = (data) => async (dispatch) => {
+export const editSong = (data, history) => async (dispatch) => {
   dispatch({
     type: SET_LOADER,
   });

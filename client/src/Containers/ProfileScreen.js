@@ -49,7 +49,7 @@ class ProfileScreen extends Component {
   }
 
   componentDidMount() {
-    this.props.showAllMusic();
+    this.props.showAllMusic(this.props.history);
     this.props.userData();
   }
 
@@ -107,7 +107,8 @@ class ProfileScreen extends Component {
     this.props.deleteSong(id);
   };
 
-  logout = () => {
+  logout = (e) => {
+    e.preventDefault();
     this.props.logoutUser();
   };
 
@@ -146,10 +147,11 @@ class ProfileScreen extends Component {
       }
 
       if (!isEmpty(filterMusic)) {
-        content = filterMusic.map((data) => (
+        content = filterMusic.map((data, index) => (
           <React.Fragment key={data._id}>
             <MusicList
               data={data}
+              index={index + 1}
               //MODAl
               editModal={this.editModal}
               deleteMusic={this.deleteMusic}
@@ -192,8 +194,7 @@ class ProfileScreen extends Component {
     return (
       <React.Fragment>
         <div className="profile_page_all">
-          {console.log(allMusic, "datatat")}
-          <Navbar onSearchChange={this.onSearchChange} />
+          <Navbar onSearchChange={this.onSearchChange} logout={this.logout} />
           {this.props.loading ? <Loader /> : dashboardContent}
         </div>
       </React.Fragment>

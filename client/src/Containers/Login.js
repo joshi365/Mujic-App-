@@ -12,7 +12,6 @@ class Login extends Component {
     this.state = {
       number: "",
       password: "",
-      auth: "",
       loading: false,
     };
   }
@@ -49,9 +48,7 @@ class Login extends Component {
     return (
       <React.Fragment>
         {this.state.loading ? (
-          <div style={{ height: "100%" }}>
-            <Loader message="Logging In Please Wait ......" />
-          </div>
+          <Loader message="Logging In Please Wait ......" />
         ) : (
           <LoginForm
             inputHandler={this.inputHandler}
@@ -71,7 +68,6 @@ Login.propTypes = {
 
 const mapStateToProps = (state) => ({
   loading: state.loader.loading,
-  auth: state.authReducer.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { signIn })(withRouter(Login));

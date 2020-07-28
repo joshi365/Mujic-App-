@@ -1,9 +1,30 @@
 .profile_page_all {
-  background: url(./Assets/images/giutar.jpeg);
-  background-size: cover; /* <------ */
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  position: absolute;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.popup_input_width {
+  width: 100% !important;
+}
+
+.btn-link:focus {
+  text-decoration: none;
+  border: none;
+  border-bottom: none;
+}
+
+.btn {
+  border: none !important;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 0px !important;
 }
 
 .profile_main_page {
@@ -51,8 +72,50 @@
   }
 }
 
-//NAVBAR
+/****************************************************NAVBAR CSS**************************************/
+.navbar {
+  .nav_input {
+    text-align: center;
+  }
+  .profile_img {
+    width: 3%;
+    margin-right: 12px;
+    border-radius: 30px;
+  }
+}
 
+/****************************************************ERROR PAGE CSS**************************************/
+.error_page_main {
+  .err_img {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    min-width: 100% !important;
+    min-height: 100% !important;
+  }
+
+  .error-button {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    width: 20%;
+    border-radius: vw(20px);
+    height: vw(85px);
+    border: none;
+    border: vw(1px) solid #23d954;
+    background-color: #f39c12;
+    font-family: "Quicksand-Regular";
+    font-size: vw(35px);
+    outline: none !important;
+  }
+}
+
+/****************************************************ERROR PAGE CSS**************************************/
+
+/**********************************MEDIA QUERY****************************************************/
 @media (max-width: 800px) {
   .profile_main_page {
     .image_add {
@@ -66,6 +129,27 @@
     }
     .edit_img {
       width: 7%;
+    }
+  }
+  .navbar {
+    .profile_img {
+      width: 10%;
+      // margin-right: 12px;
+      // border-radius: 30px;
+    }
+  }
+
+  .error_page_main {
+    .error-button {
+      width: 35%;
+      border-radius: mvw(20px);
+      height: mvw(40px);
+      border: none;
+      border: mvw(1px) solid #23d954;
+      background-color: #f39c12;
+      font-family: "Quicksand-Regular";
+      font-size: mvw(13px);
+      outline: none !important;
     }
   }
 }

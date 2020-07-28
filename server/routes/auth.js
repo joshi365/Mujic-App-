@@ -11,7 +11,7 @@ const client = require("twilio")(config.accountSID, config.authToken);
 //TWILIO SEND OTP
 router.post("/otp", async (req, res) => {
   const mobileNumber = req.body.number;
-  // console.log(mobileNumber);
+
   const numberExist = await User.findOne({ number: req.body.number });
   if (numberExist) return res.status(404).send("number already registered");
   else
@@ -73,7 +73,7 @@ router.post("/register", async (req, res) => {
 
   try {
     const savedUser = await user.save();
-    res.send(user._id);
+    res.status(200).send(user._id);
   } catch (error) {
     res.status(400).send(error);
   }
@@ -97,8 +97,7 @@ router.post("/login", async (req, res) => {
   //Create AND ASSIGN TOKEN
   if (validPass) {
     const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
-    res.header("auth-token", token).send(token);
-    res.send("user", user).send(user);
+    res.status(200).header("auth-token", token).send(token);
   }
 });
 

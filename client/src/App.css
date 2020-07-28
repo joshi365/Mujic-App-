@@ -176,7 +176,7 @@ video {
 }
 
 .input-login {
-  width: 100%;
+  width: 40%;
   border-radius: 1.5625vw;
   border: 0.15625vw solid #fa3802;
   height: 3.38542vw;
@@ -244,6 +244,7 @@ select.form-control {
   .input-login {
     border-radius: 6.66667vw;
     height: 13.33333vw;
+    width: 90%;
   }
   .input-login::-webkit-input-placeholder {
     font-size: 15px;
@@ -280,12 +281,32 @@ select.form-control {
 }
 
 .profile_page_all {
-  background: url(./Assets/images/giutar.jpeg);
-  background-size: cover;
-  /* <------ */
+  background-color: #000000;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  position: absolute;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.popup_input_width {
+  width: 100% !important;
+}
+
+.btn-link:focus {
+  text-decoration: none;
+  border: none;
+  border-bottom: none;
+}
+
+.btn {
+  border: none !important;
+  border-bottom: none;
+}
+
+.card-body {
+  padding: 0px !important;
 }
 
 .profile_main_page {
@@ -334,6 +355,46 @@ select.form-control {
   margin: auto;
 }
 
+/****************************************************NAVBAR CSS**************************************/
+.navbar .nav_input {
+  text-align: center;
+}
+
+.navbar .profile_img {
+  width: 3%;
+  margin-right: 12px;
+  border-radius: 30px;
+}
+
+/****************************************************ERROR PAGE CSS**************************************/
+.error_page_main .err_img {
+  width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.error_page_main .error-button {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  width: 20%;
+  border-radius: 1.04167vw;
+  height: 4.42708vw;
+  border: none;
+  border: 0.05208vw solid #23d954;
+  background-color: #f39c12;
+  font-family: "Quicksand-Regular";
+  font-size: 1.82292vw;
+  outline: none !important;
+}
+
+/****************************************************ERROR PAGE CSS**************************************/
+/**********************************MEDIA QUERY****************************************************/
 @media (max-width: 800px) {
   .profile_main_page .image_add {
     width: 7%;
@@ -343,6 +404,20 @@ select.form-control {
   }
   .music_main_div .edit_img {
     width: 7%;
+  }
+  .navbar .profile_img {
+    width: 10%;
+  }
+  .error_page_main .error-button {
+    width: 35%;
+    border-radius: 5.33333vw;
+    height: 10.66667vw;
+    border: none;
+    border: 0.26667vw solid #23d954;
+    background-color: #f39c12;
+    font-family: "Quicksand-Regular";
+    font-size: 3.46667vw;
+    outline: none !important;
   }
 }
 /*# sourceMappingURL=App.css.map */

@@ -74,7 +74,7 @@ class EditPopup extends Component {
               <div className="row">
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Song"
                     name="song"
@@ -84,7 +84,7 @@ class EditPopup extends Component {
                 </div>
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Artist"
                     name="artist"
@@ -94,7 +94,7 @@ class EditPopup extends Component {
                 </div>
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Movie/Album"
                     name="album"
@@ -104,7 +104,7 @@ class EditPopup extends Component {
                 </div>
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Scale"
                     name="scale"
@@ -114,7 +114,7 @@ class EditPopup extends Component {
                 </div>
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Chords"
                     name="chords"
@@ -124,7 +124,7 @@ class EditPopup extends Component {
                 </div>
                 <div className="col-sm-6 mb-4">
                   <input
-                    className="input-login"
+                    className="input-login popup_input_width"
                     type="text"
                     placeholder="Chord Pattern"
                     name="chordPattern"

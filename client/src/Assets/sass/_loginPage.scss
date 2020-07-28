@@ -54,7 +54,7 @@
 }
 
 .input-login {
-  width: 100%;
+  width: 40%;
   border-radius: vw(30px);
   border: vw(3px) solid #fa3802;
   height: vw(65px);
@@ -101,6 +101,7 @@ select.form-control {
   .input-login {
     border-radius: mvw(25px);
     height: mvw(50px);
+    width: 90%;
   }
 
   .input-login::placeholder {

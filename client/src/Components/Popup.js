@@ -26,7 +26,7 @@ function Popup({
             <div className="row">
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Song"
                   name="song"
@@ -36,7 +36,7 @@ function Popup({
               </div>
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Artist"
                   name="artist"
@@ -46,7 +46,7 @@ function Popup({
               </div>
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Movie/Album"
                   name="album"
@@ -56,7 +56,7 @@ function Popup({
               </div>
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Scale"
                   name="scale"
@@ -66,7 +66,7 @@ function Popup({
               </div>
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Chords"
                   name="chords"
@@ -76,7 +76,7 @@ function Popup({
               </div>
               <div className="col-sm-6 mb-4">
                 <input
-                  className="input-login"
+                  className="input-login popup_input_width"
                   type="text"
                   placeholder="Chord Pattern"
                   name="chordPattern"

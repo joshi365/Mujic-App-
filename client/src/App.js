@@ -6,6 +6,7 @@ import SignUp from "./Containers/SignUp";
 import setAuthToken from "./store/utils/setAuthtoken";
 import ProfileForm from "./Components/ProfileForm";
 import { PersistGate } from "redux-persist/integration/react";
+import ErrorPage from "./Components/ErrorPage";
 
 //REDUX
 import { Provider } from "react-redux";
@@ -42,6 +43,7 @@ function App() {
                 path="/profileform"
                 component={ProfileForm}
               ></PrivateRoutes>
+              <Route exact path="/error" component={ErrorPage}></Route>
             </Switch>
           </Router>
         </PersistGate>
