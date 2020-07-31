@@ -145,9 +145,6 @@ export const signUp = (data, history) => async (dispatch) => {
           type: REMOVE_LOADER,
         });
 
-        const mesaage = "sucess login to continue";
-        const type = "error";
-        notify(mesaage, type);
         localStorage.clear();
 
         dispatch({
@@ -158,6 +155,9 @@ export const signUp = (data, history) => async (dispatch) => {
           history.push({
             pathname: "/",
           });
+          const mesaage = "sucess login to continue";
+          const type = "error";
+          notify(mesaage, type);
         }, 500);
       }
     });
@@ -218,10 +218,13 @@ export const signIn = (data, history) => async (dispatch) => {
     });
   } catch (error) {
     if (error) {
-      const mesaage = error.res.data;
+      const mesaage = error.response.data;
       notifyError(mesaage);
       dispatch({
         type: REMOVE_LOADER,
+      });
+      dispatch({
+        type: SHOW_SUBMIT_FALSE,
       });
       console.log(error);
     }

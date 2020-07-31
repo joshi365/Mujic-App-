@@ -32,6 +32,7 @@ class ProfileScreen extends Component {
       allMusic: {},
       editModalData: {},
       serach: "",
+      profileShow: false,
     };
   }
 
@@ -112,6 +113,13 @@ class ProfileScreen extends Component {
     this.props.logoutUser();
   };
 
+  profileFormShow = (e) => {
+    e.preventDefault();
+    this.setState({
+      profileShow: !this.state.profileShow,
+    });
+    console.log("hihihii");
+  };
   render() {
     const {
       song,
@@ -191,10 +199,21 @@ class ProfileScreen extends Component {
       dashboardContent = <IfNoProfile />;
     }
 
+    var nav;
+
+    if (!isEmpty(this.state.allMusic)) {
+      nav = (
+        <Navbar onSearchChange={this.onSearchChange} logout={this.logout} />
+      );
+    } else {
+      nav = null;
+    }
+
     return (
       <React.Fragment>
+        {console.log(this.state.allMusic)}
         <div className="profile_page_all">
-          <Navbar onSearchChange={this.onSearchChange} logout={this.logout} />
+          {nav}
           {this.props.loading ? <Loader /> : dashboardContent}
         </div>
       </React.Fragment>

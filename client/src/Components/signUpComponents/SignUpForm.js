@@ -18,7 +18,7 @@ function SignUpForm({
             <div className="form-group row">
               <div className="col-sm-4"></div>
 
-              <div className="col-sm-4">
+              <div className="col-sm-12">
                 <input
                   type="text"
                   className="input-login mb-3"
@@ -29,12 +29,12 @@ function SignUpForm({
                   value={name}
                 />
               </div>
-              <div className="col-sm-4"></div>
+              <div className="col-sm-12"></div>
             </div>
             <div className="form-group row">
               <div className="col-sm-4"></div>
 
-              <div className="col-sm-4">
+              <div className="col-sm-12">
                 <input
                   type="email"
                   className="input-login mb-3"
@@ -45,12 +45,12 @@ function SignUpForm({
                   value={email}
                 />
               </div>
-              <div className="col-sm-4"></div>
+              <div className="col-sm-12"></div>
             </div>
             <div className="form-group row">
-              <div className="col-sm-4"></div>
+              <div className="col-sm-12"></div>
 
-              <div className="col-sm-4 ">
+              <div className="col-sm-12 ">
                 <input
                   type="password"
                   className="input-login mb-4 "
@@ -65,7 +65,7 @@ function SignUpForm({
             <div className="form-group row">
               <div className="col-sm-4"></div>
 
-              <div className="col-sm-4">
+              <div className="col-sm-12">
                 <input
                   type="password"
                   className="input-login mb-2"
@@ -80,14 +80,7 @@ function SignUpForm({
             <button type="submit" className="login-button mb-3">
               Sign-Up
             </button>
-            <h4 style={{ color: "#f5f507" }} className="normal-text">
-              <b>
-                Already A Member
-                <Link className="ml-2" to="/" style={{ color: "red" }}>
-                  Login
-                </Link>
-              </b>
-            </h4>
+          
           </form>
         </div>
       </div>

@@ -66,12 +66,12 @@ function MusicList({ data, editModal, deleteMusic, index }) {
                       </div>
                     </div>
                     <img
-                      className="delete_img mt-3 ml-4"
+                      className="delete_img mt-3 mr-4"
                       src={require("../Assets/images/delete.svg")}
                       onClick={() => deleteMusic(data._id)}
                     />
                     <img
-                      className="edit_img mt-3 ml-4"
+                      className="delete_img mt-3 ml-4"
                       src={require("../Assets/images/pencil.svg")}
                       onClick={() => editModal(data)}
                     />

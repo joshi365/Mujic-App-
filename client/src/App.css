@@ -305,6 +305,11 @@ select.form-control {
   border-bottom: none;
 }
 
+.btn:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .card-body {
   padding: 0px !important;
 }
@@ -325,12 +330,7 @@ select.form-control {
 }
 
 .music_main_div .delete_img {
-  width: 4%;
-  cursor: pointer;
-}
-
-.music_main_div .edit_img {
-  width: 4%;
+  width: 3%;
   cursor: pointer;
 }
 

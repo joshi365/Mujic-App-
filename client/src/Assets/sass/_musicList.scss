@@ -22,6 +22,9 @@
   border: none !important;
   border-bottom: none;
 }
+.btn:focus {
+  box-shadow: none;
+}
 
 .card-body {
   padding: 0px !important;
@@ -41,12 +44,7 @@
   border: vw(4px) solid #23d954;
   border-radius: vw(120px);
   .delete_img {
-    width: 4%;
-    cursor: pointer;
-  }
-
-  .edit_img {
-    width: 4%;
+    width: 3%;
     cursor: pointer;
   }
 }

@@ -43,17 +43,22 @@ export const postUserData = (data, history) => async (dispatch) => {
   });
   try {
     await axios.post("/api/profile", data).then((res) => {
-      // console.log(res);
-      if (res) {
-        dispatch({
-          type: REMOVE_LOADER,
-        });
+      console.log(res, "checking");
 
-        const mesaage = "Sucess";
-        notify(mesaage);
+      if (res) {
         history.push({
           pathname: "/profile",
         });
+        dispatch(showAllMusic());
+
+        setTimeout(() => {
+          window.location.reload();
+          setTimeout(() => {
+            dispatch({
+              type: REMOVE_LOADER,
+            });
+          }, 500);
+        }, 300);
       }
     });
   } catch (error) {
@@ -74,14 +79,14 @@ export const addMusic = (data, history) => async (dispatch) => {
   try {
     await axios.post("/api/music", data).then((res) => {
       if (res) {
-        dispatch({
-          type: REMOVE_LOADER,
-        });
         window.location.reload();
         dispatch(showAllMusic());
         setTimeout(() => {
           const mesaage = "Sucess";
           notify(mesaage);
+          dispatch({
+            type: REMOVE_LOADER,
+          });
         }, 3000);
       }
     });
