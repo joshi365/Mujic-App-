@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import { css } from "@emotion/core";
 import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
-const override = css`
-  display: inline-flex;
-  position: relative;
-  margin-top: 20%;
-`;
 
 export default class App extends Component {
   constructor(props) {

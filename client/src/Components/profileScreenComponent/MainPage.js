@@ -15,12 +15,13 @@ function MainPage({
 }) {
   return (
     <React.Fragment>
-      <div className="profile_main_page mt-2 ">
+      <div className="profile_main_page">
         <h1 className="mid-text">Add your own song</h1>
         <img
           className="image_add"
           src={require("../../Assets/images/plus.svg")}
           onClick={modalToggler}
+          alt="img"
         />
 
         {/************************ * Modal ****************************/}

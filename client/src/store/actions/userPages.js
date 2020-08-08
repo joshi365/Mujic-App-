@@ -5,10 +5,10 @@ import {
   REMOVE_LOADER,
   GET_ALL_MUSIC,
 } from "../types";
-import { notify, notifyError } from "../toastNotification";
+import { notifyError } from "../toastNotification";
 
 //Loading User Data
-export const userData = (history) => async (dispatch) => {
+export const userData = () => async (dispatch) => {
   dispatch({
     type: SET_LOADER,
   });
@@ -72,22 +72,21 @@ export const postUserData = (data, history) => async (dispatch) => {
 
 //Adding to music List
 
-export const addMusic = (data, history) => async (dispatch) => {
+export const addMusic = (data) => async (dispatch) => {
   dispatch({
     type: SET_LOADER,
   });
   try {
     await axios.post("/api/music", data).then((res) => {
       if (res) {
-        window.location.reload();
-        dispatch(showAllMusic());
         setTimeout(() => {
-          const mesaage = "Sucess";
-          notify(mesaage);
-          dispatch({
-            type: REMOVE_LOADER,
-          });
-        }, 3000);
+          window.location.reload();
+          setTimeout(() => {
+            dispatch({
+              type: REMOVE_LOADER,
+            });
+          }, 200);
+        }, 100);
       }
     });
   } catch (error) {
@@ -129,11 +128,16 @@ export const editSong = (data, history) => async (dispatch) => {
     await axios.patch("/api/music", data).then((res) => {
       // console.log(res, "edit music response");
       if (res) {
-        dispatch({
-          type: REMOVE_LOADER,
-        });
-
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+          // const mesaage = "Sucess";
+          // notify(mesaage);
+          setTimeout(() => {
+            dispatch({
+              type: REMOVE_LOADER,
+            });
+          }, 400);
+        }, 300);
       }
     });
   } catch (error) {
@@ -152,10 +156,16 @@ export const deleteSong = (id) => async (dispatch) => {
       dispatch({ type: SET_LOADER });
       await axios.delete(`/api/music/${id}`).then((res) => {
         if (res) {
-          dispatch({
-            type: REMOVE_LOADER,
-          });
-          window.location.reload();
+          setTimeout(() => {
+            window.location.reload();
+            // const mesaage = "Sucess";
+            // notify(mesaage);
+            setTimeout(() => {
+              dispatch({
+                type: REMOVE_LOADER,
+              });
+            }, 400);
+          }, 300);
         }
       });
     } catch (error) {

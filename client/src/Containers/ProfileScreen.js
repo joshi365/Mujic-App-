@@ -68,16 +68,28 @@ class ProfileScreen extends Component {
   onSubmitHandler = (e) => {
     e.preventDefault();
     const { song, artist, album, scale, chords, chordPattern } = this.state;
-    const data = {
-      song: song,
-      artist: artist,
-      album: album,
-      scale: scale,
-      chords: chords,
-      chordPattern: chordPattern,
-    };
-    this.props.addMusic(data);
-    this.modalToggler();
+
+    if (
+      song.length < 3 ||
+      artist.length < 3 ||
+      album.length < 3 ||
+      scale.length < 3 ||
+      chords.length < 3 ||
+      chordPattern.length < 3
+    ) {
+      alert("length shoud be more than 3 characters");
+    } else {
+      const data = {
+        song: song,
+        artist: artist,
+        album: album,
+        scale: scale,
+        chords: chords,
+        chordPattern: chordPattern,
+      };
+      this.props.addMusic(data);
+      this.modalToggler();
+    }
   };
 
   modalToggler = (e) => {
@@ -118,7 +130,6 @@ class ProfileScreen extends Component {
     this.setState({
       profileShow: !this.state.profileShow,
     });
-    console.log("hihihii");
   };
   render() {
     const {
@@ -211,7 +222,6 @@ class ProfileScreen extends Component {
 
     return (
       <React.Fragment>
-        {console.log(this.state.allMusic)}
         <div className="profile_page_all">
           {nav}
           {this.props.loading ? <Loader /> : dashboardContent}

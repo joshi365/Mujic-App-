@@ -188,7 +188,6 @@ export const signIn = (data, history) => async (dispatch) => {
   });
   try {
     await axios.post("/api/user/login", data).then((res) => {
-      console.log(res.data, "hiiii");
       if (res) {
         dispatch({
           type: REMOVE_LOADER,

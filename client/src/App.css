@@ -146,14 +146,14 @@ video {
 
 .mid-text {
   font-family: "Quicksand-Medium";
-  color: aliceblue;
+  color: #ffffff;
   font-size: 2.60417vw;
   letter-spacing: 0.05208vw;
 }
 
 .normal-text {
   font-family: "Quicksand-Regular";
-  color: aliceblue;
+  color: #ffffff;
   font-size: 1.82292vw;
   letter-spacing: 0.05208vw;
 }
@@ -187,28 +187,28 @@ video {
   font-family: "Quicksand-Regular";
   font-size: 1.30208vw;
   padding: 1.04167vw;
-  color: black;
+  color: #0a0a0a;
 }
 
 .input-login:-ms-input-placeholder {
   font-family: "Quicksand-Regular";
   font-size: 1.30208vw;
   padding: 1.04167vw;
-  color: black;
+  color: #0a0a0a;
 }
 
 .input-login::-ms-input-placeholder {
   font-family: "Quicksand-Regular";
   font-size: 1.30208vw;
   padding: 1.04167vw;
-  color: black;
+  color: #0a0a0a;
 }
 
 .input-login::placeholder {
   font-family: "Quicksand-Regular";
   font-size: 1.30208vw;
   padding: 1.04167vw;
-  color: black;
+  color: #0a0a0a;
 }
 
 input[type="text"],
@@ -316,6 +316,7 @@ select.form-control {
 
 .profile_main_page {
   text-align: center;
+  margin-top: 5.20833vw;
 }
 
 .profile_main_page .image_add {
@@ -396,6 +397,9 @@ select.form-control {
 /****************************************************ERROR PAGE CSS**************************************/
 /**********************************MEDIA QUERY****************************************************/
 @media (max-width: 800px) {
+  .profile_main_page {
+    margin-top: 21.33333vw;
+  }
   .profile_main_page .image_add {
     width: 7%;
   }

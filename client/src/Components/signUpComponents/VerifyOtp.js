@@ -40,7 +40,7 @@ function VerifyOtp({ inputHandler, otp, onOtpSubmit, changeNumber }) {
             </h1>
             <h1
               className="col-sm-12 normal-text"
-              style={{ color: "red", cursor: "pointer" }}
+              style={{ color: "#ff0505", cursor: "pointer" }}
               onClick={changeNumber}
             >
               Click here

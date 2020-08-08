@@ -44,14 +44,11 @@ function LoginForm({ inputHandler, onSubmitHandler, mobile, password }) {
             <h4 style={{ color: "#f5f507" }} className="normal-text ">
               <b>
                 Not A Member
-                <Link className="ml-2" to="signup" style={{ color: "red" }}>
+                <Link className="ml-2" to="signup" style={{ color: "#ff0505" }}>
                   SIGN-UP
                 </Link>
               </b>
             </h4>
-            <p style={{ color: "white" }}>
-              <b>Forgot Password</b>
-            </p>
           </form>
         </div>
       </div>

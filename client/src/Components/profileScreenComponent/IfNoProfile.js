@@ -41,14 +41,6 @@ class IfNoProfile extends Component {
         ) : (
           <React.Fragment>
             <div className="card container p-3 mt-5 text-center center-div">
-              <h5
-                style={{ backgroundColor: "black", borderRadius: "20px" }}
-                className="card-header mb-5"
-              >
-                <strong className="normal-text" style={{ color: "white" }}>
-                  Profile Setup
-                </strong>
-              </h5>
               <h2 style={{ color: "#f39c12" }} className="mid-text mb-2">
                 Hey User !
               </h2>
@@ -58,6 +50,7 @@ class IfNoProfile extends Component {
               </p>
               <div className="card-body px-lg-5 pt-0">
                 {/* <!-- Form --> */}
+
                 <form
                   onSubmit={this.onSubmitHandler}
                   style={{ color: "#757575" }}
@@ -128,19 +121,3 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, { postUserData })(
   withRouter(IfNoProfile)
 );
-
-// function IfNoProfile({ profileFormShow, showForm }) {
-//   return (
-//     <React.Fragment>
-//       <div style={{ padding: "2%", textAlign: "center" }}>
-//         <div className="center-div">
-//
-//         </div>
-//       </div>
-
-//       <ProfileForm />
-//     </React.Fragment>
-//   );
-// }
-
-// export default IfNoProfile;

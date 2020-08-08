@@ -1,10 +1,8 @@
 const router = require("express").Router();
-const verify = require("./VerifyToken");
-const mongoose = require("mongoose");
 const Music = require("../model/songModal");
 const { musicValidation } = require("../validation");
 
-//GET MUSIC LISt
+//GET MUSIC LIST
 router.get("/", async (req, res) => {
   Music.find({})
     .then((music) => {

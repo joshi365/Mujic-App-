@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function SignUpForm({
   onSignupHandler,
@@ -80,7 +79,6 @@ function SignUpForm({
             <button type="submit" className="login-button mb-3">
               Sign-Up
             </button>
-          
           </form>
         </div>
       </div>

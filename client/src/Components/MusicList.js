@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 function MusicList({ data, editModal, deleteMusic, index }) {
   return (
     <React.Fragment>
-      {console.log(index)}
       <div className="container ">
         <div className="p-2 music_main_div mt-3">
           <div className="row">
@@ -69,11 +68,13 @@ function MusicList({ data, editModal, deleteMusic, index }) {
                       className="delete_img mt-3 mr-4"
                       src={require("../Assets/images/delete.svg")}
                       onClick={() => deleteMusic(data._id)}
+                      alt="img"
                     />
                     <img
                       className="delete_img mt-3 ml-4"
                       src={require("../Assets/images/pencil.svg")}
                       onClick={() => editModal(data)}
+                      alt="img"
                     />
                   </Card.Body>
                 </Accordion.Collapse>

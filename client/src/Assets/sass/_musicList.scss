@@ -32,6 +32,7 @@
 
 .profile_main_page {
   text-align: center;
+  margin-top: vw(100px);
 
   .image_add {
     width: 3%;
@@ -116,6 +117,7 @@
 /**********************************MEDIA QUERY****************************************************/
 @media (max-width: 800px) {
   .profile_main_page {
+    margin-top: mvw(80px);
     .image_add {
       width: 7%;
     }

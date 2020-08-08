@@ -5,22 +5,20 @@ function Navbar({ logout, onSearchChange }) {
     <React.Fragment>
       <nav
         style={{ backgroundColor: "#555555" }}
-        class="navbar navbar-expand-lg navbar-light"
+        className="navbar fixed-top navbar-expand-lg navbar-light"
       >
-        <img
-          className="profile_img "
-          src="https://www.screenja.com/static/img/thumbs/goku-ultra-instinct-1-normal-636.png"
-        />
+        <h1 className="normal-text mr-4">
+          <strong> MyMujic</strong>
+        </h1>
         <input
-          style={{ width: "60%" }}
-          class="navbar-brand form-control mr-sm-2 input-login nav_input"
+          style={{ width: "45%" }}
+          className="navbar-brand form-control input-login nav_input"
           type="search"
-          placeholder="Search Your Song"
           onChange={onSearchChange}
-          placeholder="Search Mujic Here"
+          placeholder="Search Mujic"
         />
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarTogglerDemo02"
@@ -28,14 +26,14 @@ function Navbar({ logout, onSearchChange }) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
-          <form class="form-inline my-2 my-lg-0">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0"></ul>
+          <form className="form-inline my-2 my-lg-0">
             <button
-              class="btn btn-danger my-2 my-sm-0 logout-btn"
+              className="btn btn-danger my-2 my-sm-0 logout-btn"
               type="submit"
               onClick={logout}
             >
