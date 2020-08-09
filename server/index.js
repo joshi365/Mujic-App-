@@ -8,15 +8,15 @@ const bodyParser = require("body-parser");
 const authRoute = require("./routes/auth");
 const musicRoute = require("./routes/music");
 const profileRoute = require("./routes/profile");
+const config = require("./config/config");
 dotenv.config();
 
 //Connect to db
 mongoose.connect(
-  process.env.DB_CONNECT,
+  config.dbConnect,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log("Connected to db")
 );
-
 //Body parser middlleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,4 +26,6 @@ app.use("/api/user", authRoute);
 app.use("/api/music", musicRoute);
 app.use("/api/profile", profileRoute);
 
-app.listen(5000, () => console.log("Server Running"));
+const port = process.env.PORT || 5000;
+
+app.listen(5000, () => console.log(`Server Running ${port}`));
